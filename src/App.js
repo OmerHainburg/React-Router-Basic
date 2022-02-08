@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import "./styles.scss";
+import Student from "./students";
+import Results from "./results";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <Link className="link" to="/students">
+          Student
+        </Link>
+        <Link className="link" to="/results">
+          Results
+        </Link>
+      </nav>
+      <div className="Instructions">
+        <div className="block">
+          For this exercise, you will have to:
+          <ol>
+            <li>
+              The BrowserRouter is already imported for you in <b>index.js</b>,
+              take a moment and have a look on it.
+            </li>
+            <li>
+              Create a component named {"<Student>"} that will display{" "}
+              <b>Hello you!</b> and add it to the {"<App>"} component. (Don't
+              forget to import this new component in your App.js file)
+            </li>
+            <li>
+              Create a second component named {"<Results>"} that will display{" "}
+              <b>No results for now!</b> and add it to the {"<App>"} component.
+              (Don't forget to import this new component in your App.js file)
+            </li>
+            <li>
+              The navigation is already created for you, take a moment and have
+              a look on it.
+            </li>
+            <li>
+              Now, define your routing. You should create two routes:
+              <ul>
+                <li>/students shows the Students component</li>
+                <li>/results shows the results component</li>
+              </ul>
+            </li>
+          </ol>
+          <a
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://reactrouter.com/docs/en/v6/getting-started/overview"
+          >
+            Help{" "}
+          </a>
+        </div>
+
+        <p className="block">Create your routing here! (Routes & Route)</p>
+        <Router>
+          <Route path='/students'>
+            <Student />
+          </Route>
+          <Route path='/results'>
+            <Results />
+          </Route>
+        </Router>
+      </div>
     </div>
   );
 }
-
-export default App;
