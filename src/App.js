@@ -8,10 +8,10 @@ export default function App() {
   return (
     <div className="App">
       <nav>
-        <Link className="link" to="/students">
+        <Link className="link" to='/students'>
           Student
         </Link>
-        <Link className="link" to="/results">
+        <Link className="link" to='/results'>
           Results
         </Link>
       </nav>
